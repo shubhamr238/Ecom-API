@@ -17,13 +17,13 @@ module.exports.addProduct = function(req,res){
 //updateProduct Controller
 module.exports.updateProduct = function(req,res){
     const qty = parseInt(req.query.number);
-    console.log("params:", req.params.id, req.query.number);
-    Product.findByIdAndUpdate(req.params.id, {$set:{quantity:qty}},{new:true}, function(err, newProduct){
+    //console.log("params:", req.params.id, req.query.number);
+    Product.findByIdAndUpdate(req.params.id, {$inc:{quantity:qty}},{new:true}, function(err, newProduct){
       if(err){
         console.error("Error",err);
         return res.redirect("/");
       }
-        console.log(newProduct);
+        //console.log(newProduct);
         // newProduct.quantity=qty;
         // newProduct.save();
         return res.json({data:{
