@@ -17,7 +17,7 @@ module.exports.addProduct = function(req,res){
 module.exports.updateProduct = function(req,res){
     const qty = parseInt(req.query.number);
     console.log("params:", req.params.id, req.query.number);
-    Product.findOneAndUpdate(req.params.id, {$set:{quantity:qty}},{new:true}, function(err, newProduct){
+    Product.findByIdAndUpdate(req.params.id, {$set:{quantity:qty}},{new:true}, function(err, newProduct){
       if(err){
         console.error("Error",err);
         return res.redirect("/");
@@ -31,4 +31,16 @@ module.exports.updateProduct = function(req,res){
         }});
         
     });  
-}
+};
+
+module.exports.getProduct = function(req,res){
+    Product.find({},function(err, products){
+      if(err){
+        console.log(err);
+        return  res.redirect('/');
+      }
+      return  res.json({data:{
+        products: products
+      }});
+    });
+};
