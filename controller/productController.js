@@ -13,3 +13,22 @@ module.exports.addProduct = function(req,res){
         return  res.json({product})
     });
 };
+
+module.exports.updateProduct = function(req,res){
+    const qty = parseInt(req.query.number);
+    console.log("params:", req.params.id, req.query.number);
+    Product.findOneAndUpdate(req.params.id, {$set:{quantity:qty}},{new:true}, function(err, newProduct){
+      if(err){
+        console.error("Error",err);
+        return res.redirect("/");
+      }
+        console.log(newProduct);
+        // newProduct.quantity=qty;
+        // newProduct.save();
+        return res.json({data:{
+            product: newProduct,
+            message: "updated succesfully"
+        }});
+        
+    });  
+}
