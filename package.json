@@ -1,7 +1,7 @@
 {
-  "name": "products-api",
+  "name": "ecom-api",
   "version": "1.0.0",
-  "description": "API for an ecommerce platform admin to manage product inventory. Submitted by Shubham Rakshit to Coding Ninja as Mock Interview 1.",
+  "description": "API for an ecommerce platform admin to manage product inventory. Submitted by Shubham Rakshit to Arpan Garg (Coding Ninjas) as Mock Interview 1.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
