@@ -1,0 +1,15 @@
+{
+  "name": "products-api",
+  "version": "1.0.0",
+  "description": "API for an ecommerce platform admin to manage product inventory. Submitted by Shubham Rakshit to Coding Ninja as Mock Interview 1.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shubham Rakshit",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.7"
+  }
+}
